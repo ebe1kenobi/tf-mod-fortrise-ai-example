@@ -2,6 +2,8 @@ Skeleton of a project to Create a Mod AI for the mod "Loader AI" https://github.
 
 You just need to implements the method **AIExAgent.Move();**. All the Level information are in the property "TowerFall.Level level" in parent class Agent. Exemple in https://github.com/ebe1kenobi/tf-mod-fortrise-ai-simple
 
+**requirements**: mod "Loader AI" https://github.com/ebe1kenobi/tf-mod-fortrise-loader-ai
+
 ```C#
 using TowerFall;
 using System;
