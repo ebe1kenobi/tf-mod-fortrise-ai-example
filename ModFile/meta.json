@@ -1,8 +1,8 @@
 {
-	"name": "NAI",
+	"name": "AIExemple",
 	"version": "0.0.1",
 	"author": "ebe1.kenobi",
-	"description": "NAI",
+	"description": "AIExemple",
 	"dll": "TFModFortRiseAiExample.dll",
 	"dependencies": [{
 		"name": "Loader AI",

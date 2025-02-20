@@ -3,19 +3,15 @@ using System;
 
 namespace TFModFortRiseAiExample
 {
-  public class NAIAgent : TFModFortRiseLoaderAI.Agent
+  public class AIExAgent : TFModFortRiseLoaderAI.Agent
   {
 
-    public NAIAgent(int index, String type, PlayerInput input) : base(index, type, input)
+    public AIExAgent(int index, String type, PlayerInput input) : base(index, type, input)
     {
     }
 
-    public override void Play()
+    protected override void Move()
     {
-      if (level.Paused) return;
-      if (level.Frozen) return;
-      if (level.Ending) return;
-
       this.input.inputState = new InputState();
       this.input.inputState.AimAxis.X = 0;
       this.input.inputState.MoveX = 0;

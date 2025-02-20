@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using TowerFall;
 
 namespace TFModFortRiseAiExample
 {
@@ -16,8 +17,11 @@ namespace TFModFortRiseAiExample
 
     public static void Update_patch(On.TowerFall.TFGame.orig_Update orig, global::TowerFall.TFGame self, GameTime gameTime)
     {
-      NAI.CreateAgent();
       orig(self, gameTime);
+      if (LoaderAIImport.CanAddAgent())
+      {
+        AIEx.CreateAgent();
+      }
     }
   }
 }

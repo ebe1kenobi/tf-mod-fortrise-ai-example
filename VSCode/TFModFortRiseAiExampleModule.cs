@@ -1,7 +1,6 @@
 ﻿using System;
 using FortRise;
 using MonoMod.ModInterop;
-using TFModFortRiseLoaderAI;
 
 namespace TFModFortRiseAiExample
 {
@@ -9,6 +8,8 @@ namespace TFModFortRiseAiExample
   public class TFModFortRiseAiExampleModule : FortModule
   {
     public static TFModFortRiseAiExampleModule Instance;
+    public static bool EightPlayerMod;
+    public static bool PlayTagMod;
 
     public override Type SettingsType => typeof(TFModFortRiseAiExampleSettings);
     public static TFModFortRiseAiExampleSettings Settings => (TFModFortRiseAiExampleSettings)Instance.InternalSettings;
@@ -16,7 +17,7 @@ namespace TFModFortRiseAiExample
     public TFModFortRiseAiExampleModule()
     {
       Instance = this;
-      Logger.Init("TFModFortRiseAiExampleLOG");
+      //Logger.Init("TFModFortRiseAiExampleLOG");
     }
 
     public override void LoadContent()
@@ -27,17 +28,13 @@ namespace TFModFortRiseAiExample
     {
       MyTFGame.Load();
       typeof(LoaderAIImport).ModInterop();
+      EightPlayerMod = IsModExists("WiderSetMod");
+      PlayTagMod = IsModExists("PlayTag");
     }
 
     public override void Unload()
     {
       MyTFGame.Unload();
     }
-  }
-
-  [ModImportName("com.fortrise.TFModFortRiseLoaderAI")]
-  public static class LoaderAIImport
-  {
-    public static Func<String, Agent[], bool> addAgent;
   }
 }
